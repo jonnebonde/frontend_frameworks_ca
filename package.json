@@ -17,8 +17,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "format": "prettier --write \"src/**/*.{js,jsx,json,css,scss,md}\""
-
+    "format": "prettier --write \"src/**/*.{js,jsx,json,css,scss,md}\"",
+    "lint": "eslint src --ext .js,.jsx",
+    "lint-fix": "eslint src --ext .js,.jsx --fix --cache",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -39,6 +41,26 @@
     ]
   },
   "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-plugin-react": "^7.34.1",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
     "prettier": "^3.2.5"
+  },
+  "lint-staged": {
+    "*.jsx": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.html": [
+      "prettier --write"
+    ],
+    "*.css": [
+      "prettier --write"
+    ],
+    "*.js": [
+      "prettier --write",
+      "eslint --fix"
+    ]
   }
 }
