@@ -62,5 +62,7 @@
       "prettier --write",
       "eslint --fix"
     ]
-  }
+  },
+  "author": "jonne",
+  "license": "ISC"
 }
