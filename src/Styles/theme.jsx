@@ -2,11 +2,11 @@ import PropTypes from "prop-types";
 import { ThemeProvider } from "styled-components";
 
 const theme = {
-  backgroundColor: {
-    primary: "#4CAF50",
-    secondary: "#214e23",
-    danger: "red",
-    white: "white",
+  color: {
+    primary: "var(--color-primary)",
+    secondary: "var(--color-secondary)",
+    danger: "var(--color-danger)",
+    white: "var(--color-white)",
   },
 };
 

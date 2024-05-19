@@ -1,12 +1,17 @@
-import React from "react";
-import Nav from "./Nav";
+import styled from "styled-components";
+import NavBar from "./Nav";
+
+const HeaderContainer = styled.header`
+  width: 100%;
+  background-color: transparent;
+  z-index: var(--z-fixed);
+`;
 
 function Header() {
   return (
-    <header>
-      <div>Header with Logo and nav</div>
-      <Nav />
-    </header>
+    <HeaderContainer>
+      <NavBar />
+    </HeaderContainer>
   );
 }
 

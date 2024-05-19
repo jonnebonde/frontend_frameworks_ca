@@ -1,15 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter } from "react-router-dom";
 import Theme from "./Styles/theme";
+import GlobalStyle from "./Styles/GlobalStyle";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Theme>
+        <GlobalStyle />
         <App />
       </Theme>
     </BrowserRouter>
