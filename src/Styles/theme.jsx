@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { ThemeProvider } from "styled-components";
 
 const theme = {
@@ -12,5 +13,10 @@ const theme = {
 const Theme = ({ children }) => (
   <ThemeProvider theme={theme}>{children}</ThemeProvider>
 );
+
+// PropTypes for the component Theme so that eslint would not show any error
+Theme.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default Theme;
