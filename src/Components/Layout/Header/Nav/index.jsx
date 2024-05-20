@@ -3,12 +3,18 @@ import { NavLink } from "react-router-dom";
 import MainLogo from "./Logo";
 import { Nav, ChangeDirection, HamburgerContainer, Menu } from "./index.styles";
 import Hamburger from "hamburger-react";
+import CartIcon from "./CartIcon";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  function toggleMenu() {
-    setIsOpen(!isOpen);
+  function toggleMenu(event) {
+    if (
+      event.type === "click" ||
+      (event.type === "keydown" && event.key === "Enter")
+    ) {
+      setIsOpen(!isOpen);
+    }
   }
 
   function handleClickOutside(event) {
@@ -29,14 +35,18 @@ const Navbar = () => {
       <MainLogo />
       <ChangeDirection>
         <div></div>
-        <HamburgerContainer onClick={toggleMenu}>
-          <Hamburger toggled={isOpen} />
+        <HamburgerContainer
+          onClick={toggleMenu}
+          tabindex="1"
+          onKeyDown={toggleMenu}
+        >
+          <Hamburger toggled={isOpen} label="show menu" />
         </HamburgerContainer>
         <Menu $isOpen={isOpen}>
           <NavLink to="/">Home</NavLink>
           <NavLink to="/contact">Contact</NavLink>
         </Menu>
-        <div>CartLogo</div>
+        <CartIcon />
       </ChangeDirection>
     </Nav>
   );

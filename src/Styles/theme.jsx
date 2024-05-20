@@ -8,6 +8,12 @@ const theme = {
     danger: "var(--color-danger)",
     white: "var(--color-white)",
   },
+  button: {
+    color: "var(--color-button)",
+    hover: "var(--color-button-hover)",
+  },
+  success: "var(--color-success)",
+  border: "var(--color-border)",
 };
 
 const Theme = ({ children }) => (

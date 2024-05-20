@@ -5,15 +5,16 @@ const ChangeDirection = styled.div`
   width: 100%;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 768px) {
+    justify-content: flex-start;
+    flex-direction: row-reverse;
 `;
 
 const Nav = styled.nav`
-  width: 100%;
-  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: var(--color-primary);
 `;
 
 const Menu = styled.div`
@@ -21,6 +22,10 @@ const Menu = styled.div`
   justify-content: space-between;
   align-items: center;
   position: relative;
+
+  a {
+    padding: 0.5rem 1rem;
+  }
 
   @media (max-width: 768px) {
     overflow: hidden;
@@ -32,7 +37,7 @@ const Menu = styled.div`
     position: absolute;
     left: 0;
     right: 0;
-    background: grey;
+    background: var(--color-secondary);
   }
 `;
 
