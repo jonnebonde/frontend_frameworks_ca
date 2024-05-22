@@ -10,13 +10,16 @@ const GlobalStyle = createGlobalStyle`
 
 
 html {
-  --color-primary: black;
-  --color-secondary: #214e23;
+  --color-primary: hsl(250, 21%, 11%);
+  --color-secondary: #212529;
+  --color-button: hsl(44, 40%, 08%);
+  --color-button-hover: hsl(44, 50%, 16%);
   --color-danger: red;
+  --color-success: hsl(152, 38%, 42%);
   --color-white: white;
+  --color-border: black;
 
   background-color: var(--color-primary);
-
 }
 
 
@@ -39,11 +42,18 @@ ul {
 a {
   text-decoration: none;
   color: var(--color-white);
+  color: var(--color-white);
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+
 
   &:hover {
     text-decoration: underline;
   }
 }
+
+
 `;
 
 export default GlobalStyle;

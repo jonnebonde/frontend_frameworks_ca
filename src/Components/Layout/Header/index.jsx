@@ -1,11 +1,5 @@
-import styled from "styled-components";
 import NavBar from "./Nav";
-
-const HeaderContainer = styled.header`
-  width: 100%;
-  background-color: transparent;
-  z-index: var(--z-fixed);
-`;
+import { HeaderContainer } from "./index.styles";
 
 function Header() {
   return (
