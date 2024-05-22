@@ -52,6 +52,8 @@ a {
     text-decoration: underline;
   }
 }
+
+
 `;
 
 export default GlobalStyle;

@@ -37,14 +37,14 @@ const Navbar = () => {
         <div></div>
         <HamburgerContainer
           onClick={toggleMenu}
-          tabindex="1"
+          $tabindex="1"
           onKeyDown={toggleMenu}
         >
           <Hamburger toggled={isOpen} label="show menu" />
         </HamburgerContainer>
         <Menu $isOpen={isOpen}>
           <NavLink to="/">Home</NavLink>
-          <NavLink to="/contact">Contact</NavLink>
+          <NavLink to="/Contact">Contact</NavLink>
         </Menu>
         <CartIcon />
       </ChangeDirection>
