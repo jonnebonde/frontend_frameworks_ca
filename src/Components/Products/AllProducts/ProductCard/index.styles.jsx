@@ -21,6 +21,18 @@ const ProductCard = styled.div`
   text-align: center;
   transition: transform 0.3s ease-in-out;
   postion: relative;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:hover button {
+    background-color: var(--color-button-hover);
+  }
+
+  @media (max-width: 360px) {
+    width: 100%;
+  }
 `;
 
 const ProductReviewAndRating = styled.div`
@@ -39,6 +51,10 @@ const ProductImage = styled.img`
   width: 100%;
   height: 250px;
   object-fit: cover;
+
+  @media (max-width: 360px) {
+    height: 200px;
+  }
 `;
 
 const ProductInfo = styled.div`
@@ -54,17 +70,20 @@ const ProductInfo = styled.div`
     margin: 0 0 10px;
   }
 
-  a {
-    display: inline-block;
+  button {
+    display: block;
     width: 100%;
     background-color: var(--color-button);
     color: white;
     text-decoration: none;
     border-radius: 0 0 4px 4px;
-    padding: 13px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
 
     &:hover {
       background-color: var(--color-button-hover);
+      text-decoration: underline;
     }
   }
 `;

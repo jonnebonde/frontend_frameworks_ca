@@ -15,23 +15,25 @@ function ProductsCard(products) {
   return (
     <ProductsContainer>
       {products.products.map((product) => (
-        <ProductCard key={product.id}>
-          <ProductImage src={product.image.url} alt={product.name} />
-          <ProductInfo>
-            <ProductReviewAndRating>
-              <RatingAndReviews
-                reviews={product.reviews}
-                rating={product.rating}
+        <Link to={`/${product.id}`} key={product.id}>
+          <ProductCard key={product.id}>
+            <ProductImage src={product.image.url} alt={product.name} />
+            <ProductInfo>
+              <ProductReviewAndRating>
+                <RatingAndReviews
+                  reviews={product.reviews}
+                  rating={product.rating}
+                />
+              </ProductReviewAndRating>
+              <h2>{product.title}</h2>
+              <ProductPrice
+                price={product.price}
+                discountedPrice={product.discountedPrice}
               />
-            </ProductReviewAndRating>
-            <h2>{product.title}</h2>
-            <ProductPrice
-              price={product.price}
-              discountedPrice={product.discountedPrice}
-            />
-            <Link to={`/${product.id}`}>View Product</Link>
-          </ProductInfo>
-        </ProductCard>
+              <button>View Product</button>
+            </ProductInfo>
+          </ProductCard>
+        </Link>
       ))}
     </ProductsContainer>
   );

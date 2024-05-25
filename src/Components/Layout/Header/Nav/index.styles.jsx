@@ -23,10 +23,6 @@ const Menu = styled.div`
   align-items: center;
   position: relative;
 
-  a {
-    padding: 0.5rem 1rem;
-  }
-
   @media (max-width: 768px) {
     overflow: hidden;
     flex-direction: column;
@@ -39,6 +35,16 @@ const Menu = styled.div`
     right: 0;
     background: var(--color-secondary);
   }
+
+  a {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+
+    &:hover {
+      text-decoration: underline;
+    }
 `;
 
 const HamburgerContainer = styled.div`

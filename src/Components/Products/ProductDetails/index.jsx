@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { base_Url } from "../../../Constants/Api";
+import CartHook from "../../Cart/CartHook";
 
 async function FetchProductDetails(id) {
   const response = await fetch(`${base_Url}/${id}`);
@@ -28,8 +29,6 @@ function ProductDetails() {
 
   if (error) return "An error has occurred:" + error.message;
 
-  console.log(product.data);
-
   return (
     <>
       <h2>{product.data.name}</h2>
@@ -40,7 +39,7 @@ function ProductDetails() {
         This deal saves you {product.data.price - product.data.discountedPrice}
       </p>
       <img src={product.data.image.url} alt={product.data.name} />
-      <button>Add to Cart</button>
+      <CartHook data={product.data} />
       <div>
         {product.data.reviews.map((review) => {
           return (
