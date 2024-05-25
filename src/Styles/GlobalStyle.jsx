@@ -42,17 +42,8 @@ ul {
 }
 
 a {
+  color: var(--color-white);
   text-decoration: none;
-  color: var(--color-white);
-  color: var(--color-white);
-  font-size: 1rem;
-  font-weight: 500;
-  text-transform: uppercase;
-
-
-  &:hover {
-    text-decoration: underline;
-  }
 }
 
 

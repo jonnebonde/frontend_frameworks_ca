@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import Theme from "./Styles/theme";
 import GlobalStyle from "./Styles/GlobalStyle";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+import { CartProvider } from "./Components/Cart/CartHook/CartContext";
 
 const queryClient = new QueryClient();
 
@@ -13,12 +14,14 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
-        <Theme>
-          <GlobalStyle />
-          <App />
-        </Theme>
-      </BrowserRouter>
+      <CartProvider>
+        <BrowserRouter>
+          <Theme>
+            <GlobalStyle />
+            <App />
+          </Theme>
+        </BrowserRouter>
+      </CartProvider>
     </QueryClientProvider>
   </React.StrictMode>,
 );
