@@ -23,6 +23,10 @@ const Navbar = () => {
     }
   }
 
+  function closeMenu() {
+    setIsOpen(false);
+  }
+
   useEffect(() => {
     document.addEventListener("click", handleClickOutside);
     return () => {
@@ -32,21 +36,25 @@ const Navbar = () => {
 
   return (
     <Nav>
-      <MainLogo />
+      <MainLogo isOpen={isOpen} setIsOpen={setIsOpen} />
       <ChangeDirection>
         <div></div>
         <HamburgerContainer
           onClick={toggleMenu}
-          $tabindex="1"
+          tabIndex="1"
           onKeyDown={toggleMenu}
         >
           <Hamburger toggled={isOpen} label="show menu" />
         </HamburgerContainer>
         <Menu $isOpen={isOpen}>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/Contact">Contact</NavLink>
+          <NavLink to="/" onClick={closeMenu}>
+            Home{" "}
+          </NavLink>
+          <NavLink to="/Contact" onClick={closeMenu}>
+            Contact
+          </NavLink>
         </Menu>
-        <CartIcon />
+        <CartIcon isOpen={isOpen} setIsOpen={setIsOpen} />
       </ChangeDirection>
     </Nav>
   );

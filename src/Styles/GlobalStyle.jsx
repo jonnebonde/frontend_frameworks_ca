@@ -18,6 +18,8 @@ html {
   --color-success: hsl(152, 38%, 42%);
   --color-white: white;
   --color-border: black;
+  --color-stars: yellow;
+  --color-stars-empty: gray;
 
   background-color: var(--color-primary);
 }

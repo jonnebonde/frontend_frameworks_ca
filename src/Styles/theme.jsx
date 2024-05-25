@@ -14,6 +14,8 @@ const theme = {
   },
   success: "var(--color-success)",
   border: "var(--color-border)",
+  stars: "var(--color-stars)",
+  starsEmpty: "var(--color-stars-empty)",
 };
 
 const Theme = ({ children }) => (

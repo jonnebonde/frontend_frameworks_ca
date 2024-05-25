@@ -4,7 +4,10 @@ import {
   ProductCard,
   ProductImage,
   ProductInfo,
+  ProductReviewAndRating,
 } from "./index.styles";
+import RatingAndReviews from "./RatingAndReviews";
+import ProductPrice from "./ProductPrice";
 
 function ProductsCard(products) {
   console.log(products);
@@ -15,9 +18,17 @@ function ProductsCard(products) {
         <ProductCard key={product.id}>
           <ProductImage src={product.image.url} alt={product.name} />
           <ProductInfo>
-            <h2>{product.name}</h2>
-            <p>{product.description}</p>
-            <p>${product.price}</p>
+            <ProductReviewAndRating>
+              <RatingAndReviews
+                reviews={product.reviews}
+                rating={product.rating}
+              />
+            </ProductReviewAndRating>
+            <h2>{product.title}</h2>
+            <ProductPrice
+              price={product.price}
+              discountedPrice={product.discountedPrice}
+            />
             <Link to={`/${product.id}`}>View Product</Link>
           </ProductInfo>
         </ProductCard>
