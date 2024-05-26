@@ -1,7 +1,7 @@
-import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
+import { useParams } from "react-router-dom";
 import { base_Url } from "../../../Constants/Api";
-import CartHook from "../../Cart/CartHook";
+import CartHook from "../../../Hooks/CartHook";
 
 async function FetchProductDetails(id) {
   const response = await fetch(`${base_Url}/${id}`);

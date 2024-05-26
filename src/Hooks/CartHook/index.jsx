@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { CartContext } from "../../Cart/CartHook/CartContext";
+import { CartContext } from "./CartContext";
 
 function CartHook(data) {
   const { cart, dispatch } = useContext(CartContext);
