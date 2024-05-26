@@ -3,6 +3,20 @@ import { useParams } from "react-router-dom";
 import { base_Url } from "../../../Constants/Api";
 import { useContext } from "react";
 import { CartContext } from "../../../Hooks/CartHook/CartContext";
+import {
+  Container,
+  ProductImage,
+  ProductDetails,
+  Discount,
+  AddToCartButton,
+  ReviewsContainer,
+  Review,
+  ReviewUsername,
+  ReviewDescription,
+  ReviewRating,
+} from "./index.styles";
+
+import ProductPrice from "../AllProducts/ProductCard/ProductPrice";
 
 async function FetchProductDetails(id) {
   const response = await fetch(`${base_Url}/${id}`);
@@ -14,7 +28,7 @@ async function FetchProductDetails(id) {
   return response.json();
 }
 
-function ProductDetails() {
+function ProductContext() {
   const { dispatch } = useContext(CartContext);
 
   const { id } = useParams();
@@ -33,33 +47,36 @@ function ProductDetails() {
   if (error) return "An error has occurred:" + error.message;
 
   return (
-    <>
-      <h2>{product.data.name}</h2>
-      <p>{product.data.description}</p>
-      <p>Old Price{product.data.price}</p>
-      <p>New Price{product.data.discountedPrice}</p>
-      <p>
-        This deal saves you {product.data.price - product.data.discountedPrice}
-      </p>
-      <img src={product.data.image.url} alt={product.data.name} />
-      <button
+    <Container>
+      <ProductImage src={product.data.image.url} alt={product.data.name} />
+      <ProductDetails>
+        <h2>{product.data.name}</h2>
+        <p>{product.data.description}</p>
+        <ProductPrice
+          price={product.data.price}
+          discountedPrice={product.data.discountedPrice}
+        />
+        <Discount>
+          This deal saves you $
+          {product.data.price - product.data.discountedPrice}
+        </Discount>
+      </ProductDetails>
+      <AddToCartButton
         onClick={() => dispatch({ type: "addProduct", payload: product })}
       >
         Add to Cart
-      </button>
-      <div>
-        {product.data.reviews.map((review) => {
-          return (
-            <div key={review.id}>
-              <h3>{review.username}</h3>
-              <p>{review.description}</p>
-              <p>{review.rating}</p>
-            </div>
-          );
-        })}
-      </div>
-    </>
+      </AddToCartButton>
+      <ReviewsContainer>
+        {product.data.reviews.map((review) => (
+          <Review key={review.id}>
+            <ReviewUsername>{review.username}</ReviewUsername>
+            <ReviewDescription>{review.description}</ReviewDescription>
+            <ReviewRating>Rating: {review.rating}</ReviewRating>
+          </Review>
+        ))}
+      </ReviewsContainer>
+    </Container>
   );
 }
 
-export default ProductDetails;
+export default ProductContext;
