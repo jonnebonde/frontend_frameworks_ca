@@ -20,6 +20,8 @@ html {
   --color-border: black;
   --color-stars: yellow;
   --color-stars-empty: gray;
+  --color-text: white;
+  --color-text-secondary: gray;
 
   background-color: var(--color-primary);
 }

@@ -6,6 +6,14 @@ const ProductsContainer = styled.div`
   justify-content: space-around;
   gap: 20px;
   padding: 20px;
+
+  a {
+    position: relative;
+  }
+
+  @media (max-width: 360px) {
+    justify-content: center;
+  }
 `;
 
 const ProductCard = styled.div`
@@ -14,13 +22,12 @@ const ProductCard = styled.div`
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   width: 300px;
-  margin: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
   text-align: center;
   transition: transform 0.3s ease-in-out;
-  postion: relative;
+  height: 100%;
 
   &:hover {
     text-decoration: none;
@@ -31,7 +38,7 @@ const ProductCard = styled.div`
   }
 
   @media (max-width: 360px) {
-    width: 100%;
+    width: 80vw;
   }
 `;
 
@@ -50,15 +57,21 @@ const ProductReviewAndRating = styled.div`
 const ProductImage = styled.img`
   width: 100%;
   height: 250px;
+  min-height: 250px;
   object-fit: cover;
 
   @media (max-width: 360px) {
     height: 200px;
+    min-height: 200px;
   }
 `;
 
 const ProductInfo = styled.div`
-  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  word-break: break-all;
 
   h2 {
     font-size: 1.5rem;

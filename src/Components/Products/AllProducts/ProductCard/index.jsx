@@ -8,6 +8,8 @@ import {
 } from "./index.styles";
 import RatingAndReviews from "./RatingAndReviews";
 import ProductPrice from "./ProductPrice";
+import ProductDiscount from "../ProductCard/ProductDiscount";
+import ProductTags from "./ProductTags";
 
 function ProductsCard(products) {
   console.log(products);
@@ -17,19 +19,26 @@ function ProductsCard(products) {
       {products.products.map((product) => (
         <Link to={`/${product.id}`} key={product.id}>
           <ProductCard key={product.id}>
+            <ProductDiscount
+              price={product.price}
+              discountedPrice={product.discountedPrice}
+            />
             <ProductImage src={product.image.url} alt={product.name} />
             <ProductInfo>
+              <h2>{product.title}</h2>
+
               <ProductReviewAndRating>
                 <RatingAndReviews
                   reviews={product.reviews}
                   rating={product.rating}
                 />
               </ProductReviewAndRating>
-              <h2>{product.title}</h2>
+              <ProductTags tags={product.tags} />
               <ProductPrice
                 price={product.price}
                 discountedPrice={product.discountedPrice}
               />
+
               <button>View Product</button>
             </ProductInfo>
           </ProductCard>
