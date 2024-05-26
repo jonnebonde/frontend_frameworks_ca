@@ -1,7 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 import { base_Url } from "../../../Constants/Api";
-import CartHook from "../../../Hooks/CartHook";
+import { useContext } from "react";
+import { CartContext } from "../../../Hooks/CartHook/CartContext";
 
 async function FetchProductDetails(id) {
   const response = await fetch(`${base_Url}/${id}`);
@@ -14,6 +15,8 @@ async function FetchProductDetails(id) {
 }
 
 function ProductDetails() {
+  const { dispatch } = useContext(CartContext);
+
   const { id } = useParams();
   const {
     isPending,
@@ -39,7 +42,11 @@ function ProductDetails() {
         This deal saves you {product.data.price - product.data.discountedPrice}
       </p>
       <img src={product.data.image.url} alt={product.data.name} />
-      <CartHook data={product.data} />
+      <button
+        onClick={() => dispatch({ type: "addProduct", payload: product })}
+      >
+        Add to Cart
+      </button>
       <div>
         {product.data.reviews.map((review) => {
           return (
