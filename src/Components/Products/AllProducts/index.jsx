@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { base_Url } from "../../../Constants/Api";
 import ProductCard from "./ProductCard";
+import ProductFilter from "../ProductFilter";
 
 async function FetchAllProducts() {
   const response = await fetch(base_Url);
@@ -30,6 +31,7 @@ function AllProducts() {
 
   return (
     <>
+      <ProductFilter products={products.data} />
       <ProductCard products={products.data} />
     </>
   );

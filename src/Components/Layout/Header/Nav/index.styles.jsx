@@ -34,6 +34,7 @@ const Menu = styled.div`
     left: 0;
     right: 0;
     background: var(--color-secondary);
+    z-index: 1;
   }
 
   a {
