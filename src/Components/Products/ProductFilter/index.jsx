@@ -1,36 +1,48 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import {
+  FilterContainer,
+  FilterInput,
+  FilteredProduct,
+  FilteredProducts,
+} from "./index.styles";
 
 function ProductFilter({ products = [] }) {
   const [searchTerm, setSearchTerm] = useState("");
 
-  // computed property
   const filterProducts = products.filter((product) =>
     product.title.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
+  // Added a filter that will only show the first 5 results
+  // and show a message if no results are found.
+
   return (
-    <div className="">
-      <input
-        className=""
+    <FilterContainer>
+      <FilterInput
         value={searchTerm}
         onChange={(event) => setSearchTerm(event.target.value.trim())}
+        placeholder="Search for a product..."
       />
-      {filterProducts.length > 0 && searchTerm.length > 0 && (
-        <ul className="">
-          {filterProducts.map((product) => {
-            return (
-              <li key={product.id}>
-                <Link to={`${product.id}`} className="">
-                  {product.title}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
+      {searchTerm.length > 0 && (
+        <>
+          {filterProducts.length > 0 ? (
+            <FilteredProducts>
+              {filterProducts.slice(0, 5).map((product) => (
+                <FilteredProduct key={product.id}>
+                  <Link to={`${product.id}`}>{product.title}</Link>
+                </FilteredProduct>
+              ))}
+            </FilteredProducts>
+          ) : (
+            <FilteredProducts>
+              <FilteredProduct>No results found</FilteredProduct>
+            </FilteredProducts>
+          )}
+        </>
       )}
-    </div>
+    </FilterContainer>
   );
 }
 

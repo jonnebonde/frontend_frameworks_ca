@@ -5,7 +5,6 @@ import ProductFilter from "../ProductFilter";
 
 async function FetchAllProducts() {
   const response = await fetch(base_Url);
-  console.log(response);
 
   if (!response.ok) {
     throw new Error("There was an error fetching the listings");

@@ -12,8 +12,6 @@ import ProductDiscount from "../ProductCard/ProductDiscount";
 import ProductTags from "./ProductTags";
 
 function ProductsCard(products) {
-  console.log(products);
-
   return (
     <ProductsContainer>
       {products.products.map((product) => (

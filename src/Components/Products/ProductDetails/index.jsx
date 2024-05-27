@@ -6,7 +6,7 @@ import { CartContext } from "../../../Hooks/CartHook/CartContext";
 import {
   Container,
   ProductImage,
-  ProductDetails,
+  ProductContext,
   Discount,
   AddToCartButton,
   ReviewsContainer,
@@ -28,7 +28,7 @@ async function FetchProductDetails(id) {
   return response.json();
 }
 
-function ProductContext() {
+function ProductDetails() {
   const { dispatch } = useContext(CartContext);
 
   const { id } = useParams();
@@ -49,7 +49,7 @@ function ProductContext() {
   return (
     <Container>
       <ProductImage src={product.data.image.url} alt={product.data.name} />
-      <ProductDetails>
+      <ProductContext>
         <h2>{product.data.name}</h2>
         <p>{product.data.description}</p>
         <ProductPrice
@@ -60,11 +60,21 @@ function ProductContext() {
           This deal saves you $
           {product.data.price - product.data.discountedPrice}
         </Discount>
-      </ProductDetails>
+      </ProductContext>
       <AddToCartButton
         onClick={() => dispatch({ type: "addProduct", payload: product })}
       >
         Add to Cart
+      </AddToCartButton>
+      <AddToCartButton
+        onClick={() => dispatch({ type: "removeProduct", payload: product })}
+      >
+        removeProduct
+      </AddToCartButton>
+      <AddToCartButton
+        onClick={() => dispatch({ type: "clearCart", payload: product })}
+      >
+        clearCart
       </AddToCartButton>
       <ReviewsContainer>
         {product.data.reviews.map((review) => (
@@ -79,4 +89,4 @@ function ProductContext() {
   );
 }
 
-export default ProductContext;
+export default ProductDetails;
