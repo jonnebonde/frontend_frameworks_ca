@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 function MainLogo({ setIsOpen }) {
   return (
     <NavLink to="/" onClick={() => setIsOpen(false)}>
-      WeGotIt
+      <h1>WeGotIt</h1>
     </NavLink>
   );
 }

@@ -2,8 +2,6 @@ import PropTypes from "prop-types";
 import { DiscountOverlay } from "./index.styles";
 
 function ProductDiscount({ price, discountedPrice }) {
-  console.log(price, discountedPrice);
-
   if (discountedPrice === price) {
     return null;
   } else {

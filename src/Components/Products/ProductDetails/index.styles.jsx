@@ -16,12 +16,12 @@ const ProductImage = styled.img`
   object-fit: cover;
 `;
 
-const ProductDetails = styled.div`
+const ProductContext = styled.div`
   text-align: center;
   margin-bottom: 20px;
   width: 100%;
   max-width: 600px;
-  background-color: #f9f9f9;
+  background-color: var(--color-secondary);
 `;
 
 const Price = styled.p`
@@ -78,7 +78,7 @@ const ReviewRating = styled.p`
 export {
   Container,
   ProductImage,
-  ProductDetails,
+  ProductContext,
   Price,
   Discount,
   AddToCartButton,

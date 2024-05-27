@@ -5,6 +5,7 @@ export const initialCartState = { cart: [], total: 0 };
 function CartReducer(state, action) {
   let productIndex;
   let newTotal;
+  let newTotalItems;
   let cart = state.cart;
 
   console.log(action);
@@ -36,7 +37,17 @@ function CartReducer(state, action) {
         currentTotal += product.data.discountedPrice * product.quantity;
         return currentTotal;
       }, 0);
-      return { ...state, cart: cart, total: newTotal };
+      newTotalItems = cart.reduce((currentTotal, product) => {
+        currentTotal += product.quantity;
+        return currentTotal;
+      }, 0);
+
+      return {
+        ...state,
+        cart: cart,
+        total: newTotal,
+        totalItems: newTotalItems,
+      };
 
     // Removing a product
     case "removeProduct":
@@ -71,11 +82,20 @@ function CartReducer(state, action) {
         currentTotal += product.discountedPrice * product.quantity;
         return currentTotal;
       }, 0);
-      return { ...state, cart: cart, total: newTotal };
+      newTotalItems = cart.reduce((currentTotal, product) => {
+        currentTotal += product.quantity;
+        return currentTotal;
+      }, 0);
+      return {
+        ...state,
+        cart: cart,
+        total: newTotal,
+        totalItems: newTotalItems,
+      };
 
     // Clearing a cart
     case "clearCart":
-      return { cart: [], total: 0 };
+      return { cart: [], total: 0, totalItems: 0 };
 
     default:
       return state;
