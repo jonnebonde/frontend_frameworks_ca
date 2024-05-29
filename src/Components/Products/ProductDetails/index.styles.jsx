@@ -30,9 +30,11 @@ const Price = styled.p`
   color: ${(props) => (props.discount ? "red" : "black")};
 `;
 
-const Discount = styled.p`
-  font-size: 1em;
-  color: green;
+const Discount = styled.div`
+  p {
+    font-size: 1em;
+    color: green;
+  }
 `;
 
 const AddToCartButton = styled.button`
@@ -51,14 +53,13 @@ const AddToCartButton = styled.button`
 
 const ReviewsContainer = styled.div`
   width: 100%;
-  max-width: 800px;
+  max-width: 600px;
   margin-top: 20px;
 `;
 
 const Review = styled.div`
-  background-color: #f9f9f9;
+  background-color: var(--color-secondary);
   padding: 10px;
-  border-radius: 5px;
   margin-bottom: 10px;
 `;
 
@@ -71,7 +72,9 @@ const ReviewDescription = styled.p`
   margin: 5px 0;
 `;
 
-const ReviewRating = styled.p`
+const ReviewRating = styled.div`
+  display: flex;
+  align-items: center;
   color: gold;
 `;
 

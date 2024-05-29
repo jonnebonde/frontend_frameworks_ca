@@ -1,10 +1,9 @@
-import { IoCartOutline } from "react-icons/io5";
-import { NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
-import { CartIconContainer, CartIconText } from "./index.styles";
-import { IoCart } from "react-icons/io5";
 import { useContext } from "react";
-import { CartContext } from "../../../../../Hooks/CartHook/CartContext";
+import { IoCart, IoCartOutline } from "react-icons/io5";
+import { NavLink } from "react-router-dom";
+import { CartContext } from "../../../../../Hooks/CartHook";
+import { CartIconContainer, CartIconText } from "./index.styles";
 
 function CartIcon({ setIsOpen }) {
   const { cart } = useContext(CartContext);

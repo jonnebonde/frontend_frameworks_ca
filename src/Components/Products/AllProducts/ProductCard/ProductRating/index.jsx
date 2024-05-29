@@ -2,7 +2,7 @@ import { RiStarSFill, RiStarHalfFill } from "react-icons/ri";
 import PropTypes from "prop-types";
 import { RatingAndReviewsContainer } from "./index.styles";
 
-function RatingAndReviews({ reviews, rating }) {
+function RatingStars({ rating }) {
   const ratingStars = Array(5).fill(0);
 
   return (
@@ -16,16 +16,14 @@ function RatingAndReviews({ reviews, rating }) {
           return <RiStarSFill key={index} style={{ color: "gray" }} />;
         }
       })}
-      <p>({reviews.length})</p>
     </RatingAndReviewsContainer>
   );
 }
 
 const propTypes = {
-  reviews: PropTypes.array.isRequired,
   rating: PropTypes.number.isRequired,
 };
 
-RatingAndReviews.propTypes = propTypes;
+RatingStars.propTypes = propTypes;
 
-export default RatingAndReviews;
+export default RatingStars;

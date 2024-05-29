@@ -3,7 +3,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
-import { CartProvider } from "./Hooks/CartHook/CartContext";
+import { CartProvider } from "./Hooks/CartHook/index.jsx";
 import GlobalStyle from "./Styles/GlobalStyle";
 import Theme from "./Styles/theme";
 import reportWebVitals from "./reportWebVitals";

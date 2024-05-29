@@ -1,22 +1,23 @@
 import { useQuery } from "@tanstack/react-query";
+import { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { base_Url } from "../../../Constants/Api";
-import { useContext } from "react";
-import { CartContext } from "../../../Hooks/CartHook/CartContext";
+import { CartContext } from "../../../Hooks/CartHook";
 import {
-  Container,
-  ProductImage,
-  ProductContext,
-  Discount,
   AddToCartButton,
-  ReviewsContainer,
+  Container,
+  Discount,
+  ProductContext,
+  ProductImage,
   Review,
-  ReviewUsername,
   ReviewDescription,
   ReviewRating,
+  ReviewUsername,
+  ReviewsContainer,
 } from "./index.styles";
 
 import ProductPrice from "../AllProducts/ProductCard/ProductPrice";
+import RatingStars from "../AllProducts/ProductCard/ProductRating";
 
 async function FetchProductDetails(id) {
   const response = await fetch(`${base_Url}/${id}`);
@@ -46,42 +47,44 @@ function ProductDetails() {
 
   if (error) return "An error has occurred:" + error.message;
 
+  document.title = "WeGotIt | " + product.data.title;
+
   return (
     <Container>
+      <h1>{product.data.title}</h1>
       <ProductImage src={product.data.image.url} alt={product.data.name} />
       <ProductContext>
-        <h2>{product.data.name}</h2>
         <p>{product.data.description}</p>
         <ProductPrice
           price={product.data.price}
           discountedPrice={product.data.discountedPrice}
         />
         <Discount>
-          This deal saves you $
-          {product.data.price - product.data.discountedPrice}
+          {product.data.price - product.data.discountedPrice === 0 ? null : (
+            <p>
+              This deal saves you{" "}
+              {product.data.price - product.data.discountedPrice === 0
+                ? ""
+                : product.data.price - product.data.discountedPrice}
+            </p>
+          )}
         </Discount>
+        <AddToCartButton
+          onClick={() => dispatch({ type: "addProduct", payload: product })}
+        >
+          Add to Cart
+        </AddToCartButton>
       </ProductContext>
-      <AddToCartButton
-        onClick={() => dispatch({ type: "addProduct", payload: product })}
-      >
-        Add to Cart
-      </AddToCartButton>
-      <AddToCartButton
-        onClick={() => dispatch({ type: "removeProduct", payload: product })}
-      >
-        removeProduct
-      </AddToCartButton>
-      <AddToCartButton
-        onClick={() => dispatch({ type: "clearCart", payload: product })}
-      >
-        clearCart
-      </AddToCartButton>
+
       <ReviewsContainer>
         {product.data.reviews.map((review) => (
           <Review key={review.id}>
+            <ReviewRating>
+              Rating:
+              <RatingStars rating={product.data.rating} />
+            </ReviewRating>
             <ReviewUsername>{review.username}</ReviewUsername>
             <ReviewDescription>{review.description}</ReviewDescription>
-            <ReviewRating>Rating: {review.rating}</ReviewRating>
           </Review>
         ))}
       </ReviewsContainer>
