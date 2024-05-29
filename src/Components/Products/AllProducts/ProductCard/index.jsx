@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom";
+import ProductDiscount from "../ProductCard/ProductDiscount";
+import ProductPrice from "./ProductPrice";
+import RatingAndReviews from "./ProductRating";
+import ProductTags from "./ProductTags";
 import {
-  ProductsContainer,
   ProductCard,
   ProductImage,
   ProductInfo,
   ProductReviewAndRating,
+  ProductsContainer,
 } from "./index.styles";
-import RatingAndReviews from "./RatingAndReviews";
-import ProductPrice from "./ProductPrice";
-import ProductDiscount from "../ProductCard/ProductDiscount";
-import ProductTags from "./ProductTags";
 
 function ProductsCard(products) {
   return (
@@ -26,17 +26,13 @@ function ProductsCard(products) {
               <h2>{product.title}</h2>
 
               <ProductReviewAndRating>
-                <RatingAndReviews
-                  reviews={product.reviews}
-                  rating={product.rating}
-                />
+                <RatingAndReviews rating={product.rating} />
               </ProductReviewAndRating>
               <ProductTags tags={product.tags} />
               <ProductPrice
                 price={product.price}
                 discountedPrice={product.discountedPrice}
               />
-
               <button>View Product</button>
             </ProductInfo>
           </ProductCard>
