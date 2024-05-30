@@ -101,6 +101,32 @@ const TotalContainer = styled.div`
   font-weight: bold;
 `;
 
+const CheckoutButtonContainer = styled.div`
+  display: flex;
+  justify-content: flex-end;
+
+  a {
+    text-decoration: none;
+    color: var(--color-white);
+    background-color: var(--color-button);
+    padding: 10px 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 30px;
+  }
+
+  a:hover {
+    background-color: var(--color-button-hover);
+  }
+
+  @media (max-width: 468px) {
+    a {
+      width: 100%;
+      text-align: center;
+    }
+  }
+`;
+
 export {
   CartContainer,
   CartItemList,
@@ -114,4 +140,5 @@ export {
   QuantityText,
   RemoveButton,
   TotalContainer,
+  CheckoutButtonContainer,
 };
