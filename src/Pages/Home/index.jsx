@@ -1,7 +1,10 @@
 import AllProducts from "../../Components/Products/AllProducts";
+import { useEffect } from "react";
 
 function Home() {
-  document.title = "WeGotIt | Home";
+  useEffect(() => {
+    document.title = "WeGotIt | Home";
+  }, []);
 
   return (
     <div>

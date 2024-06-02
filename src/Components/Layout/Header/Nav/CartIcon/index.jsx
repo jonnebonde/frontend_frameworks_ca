@@ -38,8 +38,11 @@ function CartIcon({ setIsOpen }) {
   return (
     <CartIconContainer>
       <NavLink to="/checkout" onClick={() => setIsOpen(false)}>
-        {cart.totalItems === 0 ? <IoCartOutline size={40} /> : null}
-        {cart.totalItems !== 0 ? <IoCart size={40} /> : null}
+        {cart.totalItems === 0 ? (
+          <IoCartOutline size={40} />
+        ) : (
+          <IoCart size={40} />
+        )}
         <CartIconText>{cartIconText}</CartIconText>
       </NavLink>
     </CartIconContainer>

@@ -48,7 +48,8 @@ a {
   text-decoration: none;
 }
 
-
+.wrapper {
+  flex: 1 0 auto;
 `;
 
 export default GlobalStyle;

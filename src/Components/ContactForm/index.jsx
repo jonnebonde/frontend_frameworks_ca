@@ -55,24 +55,32 @@ const ContactForm = () => {
           {...register("Fullname")}
           placeholder="Fullname"
           autoComplete="name"
+          aria-invalid={errors.Fullname ? "true" : "false"}
         />
-        <ErrorMessage>{errors.Fullname?.message}</ErrorMessage>
+        <ErrorMessage role="alert">{errors.Fullname?.message}</ErrorMessage>
 
         <Input
           {...register("Subject")}
           placeholder="Subject"
           autoComplete="subject"
+          aria-invalid={errors.Subject ? "true" : "false"}
         />
-        <ErrorMessage>{errors.Subject?.message}</ErrorMessage>
+        <ErrorMessage role="alert">{errors.Subject?.message}</ErrorMessage>
 
         <Input
           {...register("Email")}
           placeholder="Email"
           autoComplete="email"
+          aria-invalid={errors.Email ? "true" : "false"}
         />
-        <ErrorMessage>{errors.Email?.message}</ErrorMessage>
+        <ErrorMessage role="alert">{errors.Email?.message}</ErrorMessage>
 
-        <Textarea {...register("Body")} placeholder="Body" autoComplete="off" />
+        <Textarea
+          {...register("Body")}
+          placeholder="Body"
+          autoComplete="off"
+          aria-invalid={errors.Body ? "true" : "false"}
+        />
         <ErrorMessage>{errors.Body?.message}</ErrorMessage>
 
         <SubmitButton type="submit">Submit</SubmitButton>
