@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const ProductsContainer = styled.div`
+export const ProductsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -16,7 +16,7 @@ const ProductsContainer = styled.div`
   }
 `;
 
-const ProductCard = styled.div`
+export const ProductCard = styled.div`
   background-color: var(--color-secondary);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -42,7 +42,7 @@ const ProductCard = styled.div`
   }
 `;
 
-const ProductReviewAndRating = styled.div`
+export const ProductReviewAndRating = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,7 +54,7 @@ const ProductReviewAndRating = styled.div`
   border-radius: 50%;
 `;
 
-const ProductImage = styled.img`
+export const ProductImage = styled.img`
   width: 100%;
   height: 250px;
   min-height: 250px;
@@ -66,7 +66,7 @@ const ProductImage = styled.img`
   }
 `;
 
-const ProductInfo = styled.div`
+export const ProductInfo = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -100,11 +100,3 @@ const ProductInfo = styled.div`
     }
   }
 `;
-
-export {
-  ProductsContainer,
-  ProductCard,
-  ProductImage,
-  ProductInfo,
-  ProductReviewAndRating,
-};

@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { base_Url } from "../../../Constants/Api";
 import { CartContext } from "../../../Hooks/CartHook";
 import {
-  AddToCartButton,
+  Button,
   Container,
   Discount,
   ProductContext,
@@ -69,11 +69,11 @@ function ProductDetails() {
             </p>
           )}
         </Discount>
-        <AddToCartButton
+        <Button
           onClick={() => dispatch({ type: "addProduct", payload: product })}
         >
           Add to Cart
-        </AddToCartButton>
+        </Button>
       </ProductContext>
 
       <ReviewsContainer>

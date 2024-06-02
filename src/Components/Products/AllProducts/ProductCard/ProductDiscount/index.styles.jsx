@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const DiscountOverlay = styled.div`
+export const DiscountOverlay = styled.div`
   position: absolute;
   top: 40px;
   left: 0;
@@ -14,5 +14,3 @@ const DiscountOverlay = styled.div`
     font-size: 1rem;
   }
 `;
-
-export { DiscountOverlay };
