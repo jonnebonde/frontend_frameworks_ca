@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Container = styled.div`
+export const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
@@ -9,14 +9,14 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const ProductImage = styled.img`
+export const ProductImage = styled.img`
   width: 100%;
   max-width: 600px;
   height: auto;
   object-fit: cover;
 `;
 
-const ProductContext = styled.div`
+export const ProductContext = styled.div`
   text-align: center;
   margin-bottom: 20px;
   width: 100%;
@@ -24,20 +24,20 @@ const ProductContext = styled.div`
   background-color: var(--color-secondary);
 `;
 
-const Price = styled.p`
+export const Price = styled.p`
   font-size: 1.2em;
   margin: 5px 0;
   color: ${(props) => (props.discount ? "red" : "black")};
 `;
 
-const Discount = styled.div`
+export const Discount = styled.div`
   p {
     font-size: 1em;
     color: green;
   }
 `;
 
-const AddToCartButton = styled.button`
+export const Button = styled.button`
   background-color: var(--color-button);
   color: white;
   border: none;
@@ -51,43 +51,29 @@ const AddToCartButton = styled.button`
   }
 `;
 
-const ReviewsContainer = styled.div`
+export const ReviewsContainer = styled.div`
   width: 100%;
   max-width: 600px;
   margin-top: 20px;
 `;
 
-const Review = styled.div`
+export const Review = styled.div`
   background-color: var(--color-secondary);
   padding: 10px;
   margin-bottom: 10px;
 `;
 
-const ReviewUsername = styled.h3`
+export const ReviewUsername = styled.h3`
   font-size: 1.1em;
   margin: 0;
 `;
 
-const ReviewDescription = styled.p`
+export const ReviewDescription = styled.p`
   margin: 5px 0;
 `;
 
-const ReviewRating = styled.div`
+export const ReviewRating = styled.div`
   display: flex;
   align-items: center;
   color: gold;
 `;
-
-export {
-  Container,
-  ProductImage,
-  ProductContext,
-  Price,
-  Discount,
-  AddToCartButton,
-  ReviewsContainer,
-  Review,
-  ReviewUsername,
-  ReviewDescription,
-  ReviewRating,
-};

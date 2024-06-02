@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const FooterContainer = styled.footer`
+export const FooterContainer = styled.footer`
   background-color: var(--color-secondary);
   color: var(--color-white);
   text-align: center;
@@ -11,5 +11,3 @@ const FooterContainer = styled.footer`
     padding: 1rem;
   }
 `;
-
-export { FooterContainer };

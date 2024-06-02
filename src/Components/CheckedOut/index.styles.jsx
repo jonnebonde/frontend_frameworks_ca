@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Container } from "../Products/ProductDetails/index.styles";
 
-const CheckedOutContainer = styled(Container)`
+export const CheckedOutContainer = styled(Container)`
   h1 {
     margin: 40px 0;
   }
@@ -15,5 +15,3 @@ const CheckedOutContainer = styled(Container)`
     }
   }
 `;
-
-export { CheckedOutContainer };

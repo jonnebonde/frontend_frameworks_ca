@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const ChangeDirection = styled.div`
+export const ChangeDirection = styled.div`
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -11,13 +11,13 @@ const ChangeDirection = styled.div`
     flex-direction: row-reverse;
 `;
 
-const Nav = styled.nav`
+export const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
 `;
 
-const Menu = styled.div`
+export const Menu = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -48,7 +48,7 @@ const Menu = styled.div`
     }
 `;
 
-const HamburgerContainer = styled.div`
+export const HamburgerContainer = styled.div`
   display: none;
   flex-direction: column;
   cursor: pointer;
@@ -57,5 +57,3 @@ const HamburgerContainer = styled.div`
     display: flex;
   }
 `;
-
-export { Nav, ChangeDirection, HamburgerContainer, Menu };

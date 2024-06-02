@@ -1,17 +1,18 @@
 import styled from "styled-components";
-import { AddToCartButton } from "../../Products/ProductDetails/index.styles";
+import { Button } from "../../Products/ProductDetails/index.styles";
 
-const CartContainer = styled.div`
+export const CartContainer = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 `;
 
-const CartItemList = styled.ul`
+export const CartItemList = styled.ul`
   list-style-type: none;
   padding: 0;
 `;
-const CartItem = styled.li`
+
+export const CartItem = styled.li`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -28,7 +29,7 @@ const CartItem = styled.li`
   }
 `;
 
-const ItemDetails = styled.div`
+export const ItemDetails = styled.div`
   display: flex;
   align-items: center;
 
@@ -38,11 +39,12 @@ const ItemDetails = styled.div`
     height: 100px;
   }
 
-
   @media (max-width: 468px) {
     margin-bottom: 20px;
+  }
 `;
-const ItemImage = styled.img`
+
+export const ItemImage = styled.img`
   width: 100px;
   height: 100px;
   display: block;
@@ -54,22 +56,22 @@ const ItemImage = styled.img`
   }
 `;
 
-const ItemName = styled.h3`
+export const ItemName = styled.h3`
   margin: 0;
 `;
 
-const ItemPrice = styled.p`
+export const ItemPrice = styled.p`
   margin: 0;
   font-weight: bold;
 `;
 
-const QuantityControl = styled.div`
+export const QuantityControl = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
-const QuantityButton = styled.button`
+export const QuantityButton = styled.button`
   padding: 5px 10px;
   border: 1px solid #ccc;
   background-color: #f0f0f0;
@@ -79,11 +81,11 @@ const QuantityButton = styled.button`
   }
 `;
 
-const QuantityText = styled.p`
+export const QuantityText = styled.p`
   margin: 0 10px;
 `;
 
-const RemoveButton = styled(AddToCartButton)`
+export const RemoveButton = styled(Button)`
   padding: 5px 10px;
   margin-left: 20px;
   margin-bottom: 0;
@@ -94,14 +96,14 @@ const RemoveButton = styled(AddToCartButton)`
   }
 `;
 
-const TotalContainer = styled.div`
+export const TotalContainer = styled.div`
   margin-top: 20px;
   text-align: right;
   font-size: 1.2em;
   font-weight: bold;
 `;
 
-const CheckoutButtonContainer = styled.div`
+export const CheckoutButtonContainer = styled.div`
   display: flex;
   justify-content: flex-end;
 
@@ -126,19 +128,3 @@ const CheckoutButtonContainer = styled.div`
     }
   }
 `;
-
-export {
-  CartContainer,
-  CartItemList,
-  CartItem,
-  ItemDetails,
-  ItemImage,
-  ItemName,
-  ItemPrice,
-  QuantityControl,
-  QuantityButton,
-  QuantityText,
-  RemoveButton,
-  TotalContainer,
-  CheckoutButtonContainer,
-};
