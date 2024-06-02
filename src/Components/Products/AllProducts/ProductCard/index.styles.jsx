@@ -11,6 +11,10 @@ export const ProductsContainer = styled.div`
     position: relative;
   }
 
+  a:focus button {
+    background-color: var(--color-button-hover);
+  }
+
   @media (max-width: 360px) {
     justify-content: center;
   }

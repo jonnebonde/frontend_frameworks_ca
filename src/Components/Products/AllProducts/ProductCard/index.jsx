@@ -21,7 +21,7 @@ function ProductsCard(products) {
               price={product.price}
               discountedPrice={product.discountedPrice}
             />
-            <ProductImage src={product.image.url} alt={product.name} />
+            <ProductImage src={product.image.url} alt={product.title} />
             <ProductInfo>
               <h2>{product.title}</h2>
 
@@ -33,7 +33,7 @@ function ProductsCard(products) {
                 price={product.price}
                 discountedPrice={product.discountedPrice}
               />
-              <button>View Product</button>
+              <button tabIndex={-1}>View Product</button>
             </ProductInfo>
           </ProductCard>
         </Link>

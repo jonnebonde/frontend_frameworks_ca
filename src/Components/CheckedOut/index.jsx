@@ -6,8 +6,6 @@ import { CheckedOutContainer } from "./index.styles";
 function CheckedOut() {
   document.title = "WeGotIt | Thank you for the money!";
 
-  console.log("CheckedOut");
-
   const { dispatch } = useContext(CartContext);
 
   useEffect(() => {

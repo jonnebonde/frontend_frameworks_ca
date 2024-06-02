@@ -13,6 +13,9 @@ function CartIcon({ setIsOpen }) {
   // If the cart has more than 99 items, show 99+
   // If the cart has less than 100 items, show the number of items
 
+  // I used chatgpt to help me make the code work as i wanted it to change icon according to the amount of items in the cart.
+  // so credits to chatGpt for helping me with this code.
+
   return (
     <CartIconContainer>
       <NavLink to="/checkout" tabIndex="1" onClick={() => setIsOpen(false)}>

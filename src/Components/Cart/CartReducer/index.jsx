@@ -6,8 +6,6 @@ function CartReducer(state, action) {
   let newTotalItems;
   let cart = state.cart;
 
-  console.log(action);
-
   switch (action.type) {
     // Adding a product
     case "addProduct":
@@ -134,3 +132,5 @@ function CartReducer(state, action) {
 }
 
 export default CartReducer;
+
+// credit to the example delivered from noroff, i made some adjustments to fit my project.
