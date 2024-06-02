@@ -8,7 +8,7 @@ import ContactPage from "./Pages/ContactPage";
 
 function App() {
   return (
-    <>
+    <div>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -19,7 +19,7 @@ function App() {
           <Route path="*" element={<h1>Not Found</h1>} />
         </Route>
       </Routes>
-    </>
+    </div>
   );
 }
 
