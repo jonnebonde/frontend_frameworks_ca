@@ -18,6 +18,9 @@ export const CartProvider = ({ children }) => {
     setStoredCart(cart);
   }, [cart, setStoredCart]);
 
+  // I was recommened by sonarcloud to use useMemo to avoid unnecessary re-renders
+  // But im not sure how i can check the difference with or without useMemo
+
   const contextValue = useMemo(() => ({ cart, dispatch }), [cart, dispatch]);
 
   return (
