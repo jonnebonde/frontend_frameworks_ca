@@ -41,7 +41,7 @@ const Navbar = () => {
         <div></div>
         <HamburgerContainer
           onClick={toggleMenu}
-          tabIndex="1"
+          tabIndex="0"
           onKeyDown={toggleMenu}
         >
           <Hamburger toggled={isOpen} label="show menu" />

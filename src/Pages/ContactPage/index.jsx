@@ -4,9 +4,9 @@ function ContactPage() {
   document.title = "WeGotIt | Contact Us";
 
   return (
-    <>
+    <div>
       <ContactForm />
-    </>
+    </div>
   );
 }
 

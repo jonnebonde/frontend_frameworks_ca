@@ -4,9 +4,9 @@ function Home() {
   document.title = "WeGotIt | Home";
 
   return (
-    <>
+    <div>
       <AllProducts />
-    </>
+    </div>
   );
 }
 

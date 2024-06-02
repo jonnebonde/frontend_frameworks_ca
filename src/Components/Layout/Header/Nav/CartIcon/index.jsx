@@ -16,18 +16,31 @@ function CartIcon({ setIsOpen }) {
   // I used chatgpt to help me make the code work as i wanted it to change icon according to the amount of items in the cart.
   // so credits to chatGpt for helping me with this code.
 
+  let cartIconText;
+
+  if (cart.totalItems === 0) {
+    cartIconText = "";
+  } else if (cart.totalItems > 99) {
+    cartIconText = "99+";
+  } else {
+    cartIconText = cart.totalItems;
+  }
+
+  // or i could to this with ternary operator inside the cartIconText variable
+  // but i think the above code is more readable.
+
+  /* cart.totalItems === 0
+            ? ""
+            : cart.totalItems > 99
+              ? "99+"
+              : cart.totalItems */
+
   return (
     <CartIconContainer>
       <NavLink to="/checkout" tabIndex="1" onClick={() => setIsOpen(false)}>
         {cart.totalItems === 0 ? <IoCartOutline size={40} /> : null}
         {cart.totalItems !== 0 ? <IoCart size={40} /> : null}
-        <CartIconText>
-          {cart.totalItems === 0
-            ? ""
-            : cart.totalItems > 99
-              ? "99+"
-              : cart.totalItems}
-        </CartIconText>
+        <CartIconText>{cartIconText}</CartIconText>
       </NavLink>
     </CartIconContainer>
   );
