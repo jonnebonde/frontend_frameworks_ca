@@ -1,7 +1,10 @@
+import { useEffect } from "react";
 import CheckoutPage from "../../Components/Cart/CartList";
 
 function CheckOutPage() {
-  document.title = "WeGotIt | Checkout";
+  useEffect(() => {
+    document.title = "WeGotIt | Checkout";
+  }, []);
 
   return (
     <div>

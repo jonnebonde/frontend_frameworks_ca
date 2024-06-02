@@ -4,8 +4,6 @@ import { CartContext } from "../../Hooks/CartHook";
 import { CheckedOutContainer } from "./index.styles";
 
 function CheckedOut() {
-  document.title = "WeGotIt | Thank you for the money!";
-
   const { dispatch } = useContext(CartContext);
 
   useEffect(() => {
@@ -14,7 +12,7 @@ function CheckedOut() {
 
   return (
     <CheckedOutContainer>
-      <h1>Thank you for your purchase!</h1>
+      <h1>Your order is succesfull and we thank you for your money</h1>
       <NavLink to="/">Go back to the home page</NavLink>
     </CheckedOutContainer>
   );

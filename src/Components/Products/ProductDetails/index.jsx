@@ -45,9 +45,13 @@ function ProductDetails() {
 
   if (isPending) return <div>Loading...</div>;
 
-  if (error) return "An error has occurred:" + error.message;
+  if (error) return <div>An error has occurred: {error.message}</div>;
 
-  document.title = "WeGotIt | " + product.data.title;
+  if (product) {
+    document.title = "WeGotIt | " + product.data.title;
+  } else {
+    document.title = "WeGotIt | Product Details";
+  }
 
   return (
     <Container>
@@ -77,16 +81,20 @@ function ProductDetails() {
       </ProductContext>
 
       <ReviewsContainer>
-        {product.data.reviews.map((review) => (
-          <Review key={review.id}>
-            <ReviewRating>
-              Rating:
-              <RatingStars rating={product.data.rating} />
-            </ReviewRating>
-            <ReviewUsername>{review.username}</ReviewUsername>
-            <ReviewDescription>{review.description}</ReviewDescription>
-          </Review>
-        ))}
+        {product.data.reviews.length > 0 ? (
+          product.data.reviews.map((review) => (
+            <Review key={review.id}>
+              <ReviewRating>
+                Rating:
+                <RatingStars rating={review.rating} />
+              </ReviewRating>
+              <ReviewUsername>{review.username}</ReviewUsername>
+              <ReviewDescription>{review.description}</ReviewDescription>
+            </Review>
+          ))
+        ) : (
+          <Review>No reviews available for this product.</Review>
+        )}
       </ReviewsContainer>
     </Container>
   );

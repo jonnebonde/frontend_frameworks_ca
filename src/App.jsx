@@ -8,18 +8,17 @@ import ContactPage from "./Pages/ContactPage";
 
 function App() {
   return (
-    <div>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="checkout" element={<CheckOutPage />} />
-          <Route path="/:id" element={<ProductPage />} />
-          <Route path="checkedout" element={<CheckOutSuccessPage />} />
-          <Route path="contact" element={<ContactPage />} />
-          <Route path="*" element={<h1>Not Found</h1>} />
-        </Route>
-      </Routes>
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="checkout" element={<CheckOutPage />} />
+        <Route path="/:id" element={<ProductPage />} />{" "}
+        {/* Updated for clarity */}
+        <Route path="checkedout" element={<CheckOutSuccessPage />} />
+        <Route path="contact" element={<ContactPage />} />
+        <Route path="*" element={<h1>Not Found</h1>} />
+      </Route>
+    </Routes>
   );
 }
 
