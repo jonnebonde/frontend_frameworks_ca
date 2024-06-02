@@ -64,7 +64,7 @@ const CheckoutPage = () => {
             {cart.cart.map((product) => (
               <CartItem key={product.data.id}>
                 <ItemDetails>
-                  <NavLink to={`/${product.data.id}`} tabIndex="1">
+                  <NavLink to={`/${product.data.id}`}>
                     <ItemImage
                       src={product.data.image.url}
                       alt={product.data.name}

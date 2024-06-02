@@ -1,6 +1,6 @@
 import { useLocalStorage } from "@uidotdev/usehooks";
 import PropTypes from "prop-types";
-import { createContext, useEffect, useReducer } from "react";
+import { createContext, useEffect, useReducer, useMemo } from "react";
 import cartReducer from "../../Components/Cart/CartReducer";
 
 export const CartContext = createContext();
@@ -18,10 +18,10 @@ export const CartProvider = ({ children }) => {
     setStoredCart(cart);
   }, [cart, setStoredCart]);
 
+  const contextValue = useMemo(() => ({ cart, dispatch }), [cart, dispatch]);
+
   return (
-    <CartContext.Provider value={{ cart, dispatch }}>
-      {children}
-    </CartContext.Provider>
+    <CartContext.Provider value={contextValue}>{children}</CartContext.Provider>
   );
 };
 
