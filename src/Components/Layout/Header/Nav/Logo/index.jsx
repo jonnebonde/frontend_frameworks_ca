@@ -1,10 +1,11 @@
 import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
+import { LogoText } from "./index.styles";
 
 function MainLogo({ setIsOpen }) {
   return (
     <NavLink to="/" onClick={() => setIsOpen(false)}>
-      <h1>WeGotIt</h1>
+      <LogoText>WeGotIt</LogoText>
     </NavLink>
   );
 }

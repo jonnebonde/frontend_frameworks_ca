@@ -41,6 +41,8 @@ const ContactForm = () => {
   });
 
   function onSubmit(data) {
+    // I like using console.table for objects and added the console.log because of the requirement
+    console.table(data);
     console.log(data);
     alert("Form submitted successfully and data is logged to console.");
   }
@@ -49,16 +51,28 @@ const ContactForm = () => {
     <ContactContainer>
       <h1>Contact Us</h1>
       <Form onSubmit={handleSubmit(onSubmit)}>
-        <Input {...register("Fullname")} placeholder="Fullname" />
+        <Input
+          {...register("Fullname")}
+          placeholder="Fullname"
+          autoComplete="name"
+        />
         <ErrorMessage>{errors.Fullname?.message}</ErrorMessage>
 
-        <Input {...register("Subject")} placeholder="Subject" />
+        <Input
+          {...register("Subject")}
+          placeholder="Subject"
+          autoComplete="subject"
+        />
         <ErrorMessage>{errors.Subject?.message}</ErrorMessage>
 
-        <Input {...register("Email")} placeholder="Email" />
+        <Input
+          {...register("Email")}
+          placeholder="Email"
+          autoComplete="email"
+        />
         <ErrorMessage>{errors.Email?.message}</ErrorMessage>
 
-        <Textarea {...register("Body")} placeholder="Body" />
+        <Textarea {...register("Body")} placeholder="Body" autoComplete="off" />
         <ErrorMessage>{errors.Body?.message}</ErrorMessage>
 
         <SubmitButton type="submit">Submit</SubmitButton>
