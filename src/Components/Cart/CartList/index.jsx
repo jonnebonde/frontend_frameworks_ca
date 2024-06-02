@@ -15,10 +15,11 @@ import {
   QuantityText,
   RemoveButton,
   TotalContainer,
+  CheckoutButtonContainer,
 } from "./index.styles";
 import { NavLink } from "react-router-dom";
 
-const CartPage = () => {
+const CheckoutPage = () => {
   const { cart, dispatch } = useContext(CartContext);
 
   const handleIncreaseQuantity = (product) => {
@@ -99,13 +100,13 @@ const CartPage = () => {
             <p>Total: ${cart.total.toFixed(2)}</p>
             <p>Total Items: {cart.totalItems}</p>
           </TotalContainer>
-          <div>
-            <button>Checkout</button>
-          </div>
+          <CheckoutButtonContainer>
+            <NavLink to={`/checkedout`}>Checkout</NavLink>
+          </CheckoutButtonContainer>
         </>
       )}
     </CartContainer>
   );
 };
 
-export default CartPage;
+export default CheckoutPage;
