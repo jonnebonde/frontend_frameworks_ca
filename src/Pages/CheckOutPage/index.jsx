@@ -4,9 +4,9 @@ function CheckOutPage() {
   document.title = "WeGotIt | Checkout";
 
   return (
-    <div>
+    <>
       <CheckoutPage />
-    </div>
+    </>
   );
 }
 
