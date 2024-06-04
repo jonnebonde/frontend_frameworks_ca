@@ -53,6 +53,8 @@ function ProductDetails() {
     document.title = "WeGotIt | Product Details";
   }
 
+  // Needed to add toFixed(2) to the product.data.price - product.data.discountedPrice to make sure the number is always displayed with 2 decimal places even if it's a whole number
+
   return (
     <Container>
       <h1>{product.data.title}</h1>
@@ -63,13 +65,16 @@ function ProductDetails() {
           price={product.data.price}
           discountedPrice={product.data.discountedPrice}
         />
+
         <Discount>
           {product.data.price - product.data.discountedPrice === 0 ? null : (
             <p>
               This deal saves you{" "}
               {product.data.price - product.data.discountedPrice === 0
                 ? ""
-                : product.data.price - product.data.discountedPrice}
+                : (product.data.price - product.data.discountedPrice).toFixed(
+                    2,
+                  )}
             </p>
           )}
         </Discount>
