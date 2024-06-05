@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { CartContext } from "../../Hooks/CartHook";
+import { CartContext } from "../../Hooks/CartContext";
 import { CheckedOutContainer } from "./index.styles";
 
 function CheckedOut() {

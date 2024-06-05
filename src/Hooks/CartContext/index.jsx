@@ -1,7 +1,7 @@
 import { useLocalStorage } from "@uidotdev/usehooks";
 import PropTypes from "prop-types";
 import { createContext, useEffect, useReducer, useMemo } from "react";
-import cartReducer from "../../Components/Cart/CartReducer";
+import cartReducer from "../CartReducer";
 
 export const CartContext = createContext();
 const initialCartState = { cart: [], total: 0, totalItems: 0 };

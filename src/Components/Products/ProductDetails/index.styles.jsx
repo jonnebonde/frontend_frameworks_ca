@@ -7,6 +7,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 `;
 
 export const ProductImage = styled.img`
@@ -22,12 +23,6 @@ export const ProductContext = styled.div`
   width: 100%;
   max-width: 600px;
   background-color: var(--color-secondary);
-`;
-
-export const Price = styled.p`
-  font-size: 1.2em;
-  margin: 5px 0;
-  color: ${(props) => (props.discount ? "red" : "black")};
 `;
 
 export const Discount = styled.div`
@@ -76,4 +71,17 @@ export const ReviewRating = styled.div`
   display: flex;
   align-items: center;
   color: gold;
+`;
+
+export const CartConfirmation = styled.div`
+  background-color: var(--color-success);
+  color: white;
+  padding: 10px;
+  margin-top: 20px;
+  position: fixed;
+  top: 5%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 `;

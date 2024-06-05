@@ -6,6 +6,8 @@ export const ProductsContainer = styled.div`
   justify-content: space-around;
   gap: 20px;
   padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 
   a {
     position: relative;

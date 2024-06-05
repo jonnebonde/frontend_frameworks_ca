@@ -1,23 +1,23 @@
-import { CartContext } from "../../../Hooks/CartHook";
+import { CartContext } from "../../../Hooks/CartContext";
 
 import { useContext } from "react";
 
+import { NavLink } from "react-router-dom";
 import {
   CartContainer,
-  CartItemList,
   CartItem,
+  CartItemList,
+  CheckoutButtonContainer,
   ItemDetails,
   ItemImage,
   ItemName,
   ItemPrice,
-  QuantityControl,
   QuantityButton,
+  QuantityControl,
   QuantityText,
   RemoveButton,
   TotalContainer,
-  CheckoutButtonContainer,
 } from "./index.styles";
-import { NavLink } from "react-router-dom";
 
 const CheckoutPage = () => {
   const { cart, dispatch } = useContext(CartContext);

@@ -1,10 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
-import { useContext } from "react";
+import { useContext, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { base_Url } from "../../../Constants/Api";
-import { CartContext } from "../../../Hooks/CartHook";
+import { CartContext } from "../../../Hooks/CartContext";
 import {
   Button,
+  CartConfirmation,
   Container,
   Discount,
   ProductContext,
@@ -31,6 +32,8 @@ async function FetchProductDetails(id) {
 
 function ProductDetails() {
   const { dispatch } = useContext(CartContext);
+  const [addedToCart, setAddedToCart] = useState(false);
+  const timeoutRef = useRef(null);
 
   const { id } = useParams();
   const {
@@ -53,10 +56,24 @@ function ProductDetails() {
     document.title = "WeGotIt | Product Details";
   }
 
+  const handleAddToCart = () => {
+    dispatch({ type: "addProduct", payload: product });
+    setAddedToCart(true);
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current); // Clear existing timeout
+    }
+    timeoutRef.current = setTimeout(() => {
+      setAddedToCart(false);
+    }, 2000);
+  };
+
   // Needed to add toFixed(2) to the product.data.price - product.data.discountedPrice to make sure the number is always displayed with 2 decimal places even if it's a whole number
 
   return (
     <Container>
+      {addedToCart && (
+        <CartConfirmation>{product.data.title} added to cart!</CartConfirmation>
+      )}
       <h1>{product.data.title}</h1>
       <ProductImage src={product.data.image.url} alt={product.data.name} />
       <ProductContext>
@@ -78,11 +95,7 @@ function ProductDetails() {
             </p>
           )}
         </Discount>
-        <Button
-          onClick={() => dispatch({ type: "addProduct", payload: product })}
-        >
-          Add to Cart
-        </Button>
+        <Button onClick={handleAddToCart}>Add to Cart</Button>
       </ProductContext>
 
       <ReviewsContainer>

@@ -24,7 +24,6 @@ function ProductsCard(products) {
             <ProductImage src={product.image.url} alt={product.title} />
             <ProductInfo>
               <h2>{product.title}</h2>
-
               <ProductReviewAndRating>
                 <RatingAndReviews rating={product.rating} />
               </ProductReviewAndRating>
