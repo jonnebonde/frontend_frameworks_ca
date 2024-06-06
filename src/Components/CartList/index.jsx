@@ -1,4 +1,4 @@
-import { CartContext } from "../../../Hooks/CartContext";
+import { CartContext } from "../../Hooks/CartContext";
 
 import { useContext } from "react";
 

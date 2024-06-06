@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Button } from "../../Products/ProductDetails/index.styles";
+import { Button } from "../Products/ProductDetails/index.styles";
 
 export const CartContainer = styled.div`
   max-width: 1200px;

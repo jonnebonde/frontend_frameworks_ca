@@ -1,4 +1,4 @@
-// This is the reducer for the cart. It will handle adding, removing, and clearing the cart.
+// This is the reducer for the cart. It will handle adding, removing, and clearing products in the cart.
 
 function CartReducer(state, action) {
   let productIndex;

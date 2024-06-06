@@ -13,7 +13,6 @@ function App() {
         <Route index element={<Home />} />
         <Route path="checkout" element={<CheckOutPage />} />
         <Route path="/:id" element={<ProductPage />} />{" "}
-        {/* Updated for clarity */}
         <Route path="checkedout" element={<CheckOutSuccessPage />} />
         <Route path="contact" element={<ContactPage />} />
         <Route path="*" element={<h1>Not Found</h1>} />

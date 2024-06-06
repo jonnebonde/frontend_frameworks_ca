@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import CheckoutPage from "../../Components/Cart/CartList";
+import CheckoutPage from "../../Components/CartList";
 
 function CheckOutPage() {
   useEffect(() => {
